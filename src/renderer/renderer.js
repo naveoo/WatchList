@@ -16,7 +16,7 @@ function displayMovies(movies) {
         const movieItem = document.createElement('div');
         movieItem.classList.add('movie-item');
         movieItem.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.title}" />
+            <img src="${movie.poster}" alt="${movie.title}" class="preview_poster" />
             <p><strong>${movie.title}</strong></p>
             <p>${movie.release_date}</p>
         `;
