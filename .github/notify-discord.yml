@@ -1,0 +1,17 @@
+name: Notify Discord on Commit
+on:
+  push:
+    branches:
+      - main
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord Notification
+        uses: appleboy/discord-action@master
+        with:
+          webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          message: |
+            Nouveau commit sur **${{ github.repository }}** par **${{ github.actor }}** :
+            - **Message** : ${{ github.event.head_commit.message }}
+            - **Lien** : ${{ github.event.head_commit.url }}
