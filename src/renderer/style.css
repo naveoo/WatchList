@@ -1,19 +1,35 @@
+:root {
+    --background-color : #202C39;
+    --main-color : #283845;
+    --font-color : #B8B08D;
+    --secondary-color : #F2D492;
+    --third-color : #F29559;
+}
+
 body { 
-    background-color: rgb(81, 81, 81);
+    background-color: var(--background-color);
     font-family: Arial, sans-serif; 
     text-align: center; 
+    padding: 20px; /*Je pose une marge autour de la page*/
+}
+
+h1{
+    background-color: var(--secondary-color);
+    padding: 0% 0%;
+    margin-left: 5em;
+    margin-right: 5em;
 }
 
 .cbouton{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    border-color: purple;
+    border-color: var(--third-color);
     border-width: 0.2em;
     border-style: solid;
     margin-top: -3em;
     margin-left: -2em;
     margin-right: -2em;
-    background: black;
+    background: var(--font-color);
 }
 .bouton{
     box-shadow: 0 200px 100px -100px white inset; 
@@ -26,11 +42,11 @@ body {
     color: black;
 }
 .bouton:hover {
-    box-shadow: 0 200px 100px -100px purple inset;
+    box-shadow: 0 200px 100px -100px var(--third-color) inset;
 }
 
 .bouton:active{
-    background-color: blueviolet;
+    background-color: #fc8130;
 }
 
 #debut{
@@ -40,51 +56,6 @@ body {
     position: relative;
     top: 0.5em;
     right:45%;
-}
-
-
-h1{
-    background-color: beige;
-    margin-left: 5em;
-    margin-right: 5em;
-}
-input { 
-    width: 50%; 
-    padding: 10px; 
-    margin-bottom: 20px; 
-}
-.movie-list { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-}
-.movie-item { 
-    margin: 1px; 
-    text-align: center; 
-    cursor: pointer; 
-}
-script { 
-    width: 150px; 
-    height: auto; 
-}
-:root {
-    --background-color : #202C39;
-    --main-color : #283845;
-    --font-color : #B8B08D;
-    --secondary-color : #F2D492;
-    --third-color : #F29559;
-}
-
-body {
-    background-color: var(--background-color);
-    font-family: Arial, sans-serif; /*Police d'écriture*/
-    text-align: center; /*J'aligne le contenu de la page au centre*/
-    padding: 20px; /*Je pose une marge autour de la page*/
-}
-
-h1 {
-    padding: 0% 0%;
-    background-color: var(--secondary-color);
 }
 
 input { /*Barre de recherche*/
@@ -108,6 +79,7 @@ input { /*Barre de recherche*/
     width: 150px; /*La longueur de l'affiche*/
     height: auto; /*La hauteur de l'affiche en gardant les proportions*/
 }
+
 .poster { /*L'affiche d'un résultat dans details.html*/
     width: 300px; /*Affiche plus grande*/
     height: auto;
