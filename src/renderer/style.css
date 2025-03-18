@@ -67,3 +67,48 @@ script {
     width: 150px; 
     height: auto; 
 }
+:root {
+    --background-color : #202C39;
+    --main-color : #283845;
+    --font-color : #B8B08D;
+    --secondary-color : #F2D492;
+    --third-color : #F29559;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif; /*Police d'écriture*/
+    text-align: center; /*J'aligne le contenu de la page au centre*/
+    padding: 20px; /*Je pose une marge autour de la page*/
+}
+
+h1 {
+    padding: 0% 0%;
+    background-color: var(--secondary-color);
+}
+
+input { /*Barre de recherche*/
+    width: 80%; /*Je met la longueur de la barre de recherche (80% de la page afin que ca soit responsive)*/
+    padding: 10px; /*Je grossi la taille de la barre de recherche*/
+    margin-bottom: 20px; /*La marge du bottom*/
+}
+.movie-list { /*Le conteneur des résultats de recherche*/
+    display: flex; /*Affichage des élements en liste*/
+    flex-wrap: wrap; /*Adapte l'affichage de la liste selon la taille de l'écran*/
+    justify-content: center; /*Centre par défaut les élements sur la page*/
+    border:ridge 2px var(--third-color);
+    border-style: solid;
+}
+.movie-item { /*Les résultats de recherche*/
+    margin: 10px; /*L'espace entre tous les résultats*/
+    text-align: center; /*Centrer le nom du film sous l'image*/
+    cursor: pointer; /*Montre un curseur en mode pointer*/
+}
+.preview_poster { /*Les affiches des résultats de recherche*/
+    width: 150px; /*La longueur de l'affiche*/
+    height: auto; /*La hauteur de l'affiche en gardant les proportions*/
+}
+.poster { /*L'affiche d'un résultat dans details.html*/
+    width: 300px; /*Affiche plus grande*/
+    height: auto;
+}
