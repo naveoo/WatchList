@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="style.css" type="text/css" />
     <title>Recherche de Films</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        input { width: 80%; padding: 10px; margin-bottom: 20px; }
-        .movie-list { display: flex; flex-wrap: wrap; justify-content: center; }
-        .movie-item { margin: 10px; text-align: center; cursor: pointer; }
-        img { width: 150px; height: auto; }
-    </style>
 </head>
+
 <body>
-    <h1>Recherche de Films</h1>
-    <input type="text" id="searchInput" placeholder="Entrez un titre..." />
+    <img id="op" src="test.jpg" height="30"/>
+    <div class="cbouton">
+        <div></div>
+        <div><input class="bouton" type="button" value="Film"/></div>
+        <div></div>
+        <div><input class="bouton" type="button" value="Editeur"/></div>
+        <div></div>
+        <div><input class="bouton" type="button" value="Acteur.rice"/></div>
+        <div></div>
+    </div>
+    
+    <div id = "debut">
+        <h1>Recherche de Films</h1>
+        <input type="text" id="searchInput" placeholder="Entrez un titre..." />
+    </div>
+
     <div class="movie-list" id="movieList"></div>
     <a id="detailsLink" href="details.html" style="display: none;"></a>
-
     <script src="renderer.js"></script>
 </body>
 </html>

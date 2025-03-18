@@ -1,0 +1,69 @@
+body { 
+    background-color: rgb(81, 81, 81);
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+}
+
+.cbouton{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-color: purple;
+    border-width: 0.2em;
+    border-style: solid;
+    margin-top: -3em;
+    margin-left: -2em;
+    margin-right: -2em;
+    background: black;
+}
+.bouton{
+    box-shadow: 0 200px 100px -100px white inset; 
+    transition: box-shadow 0.25s;
+    border: 0;
+    line-height: 3em;
+    font-size: 1.3rem;
+    margin-bottom: -0.1em;
+    text-align: center;
+    color: black;
+}
+.bouton:hover {
+    box-shadow: 0 200px 100px -100px purple inset;
+}
+
+.bouton:active{
+    background-color: blueviolet;
+}
+
+#debut{
+    padding-top: 2%
+}
+#op{
+    position: relative;
+    top: 0.5em;
+    right:45%;
+}
+
+
+h1{
+    background-color: beige;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+input { 
+    width: 50%; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+}
+.movie-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+.movie-item { 
+    margin: 1px; 
+    text-align: center; 
+    cursor: pointer; 
+}
+script { 
+    width: 150px; 
+    height: auto; 
+}
