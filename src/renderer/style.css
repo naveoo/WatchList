@@ -1,4 +1,4 @@
-:root {
+:root { /* Stockage de Variable */
     --background-color : #202C39;
     --main-color : #283845;
     --font-color : #B8B08D;
@@ -6,55 +6,54 @@
     --third-color : #F29559; 
 }
 
-body { 
-    background-color: var(--background-color);
-    font-family: Arial, sans-serif; 
-    text-align: center; 
+body {  /* Les paramétres universelles de la/les page(s) */
+    background-color: var(--background-color); /* Définit la couleurs de fond */
+    font-family: Arial, sans-serif; /* Définit la police de texte */
+    text-align: center; /* Met le texte au centre */
     padding: 20px; /*Je pose une marge autour de la page*/
 }
 
-h1{
+h1{ /* Le titre principal */
     background-color: var(--secondary-color);
-    padding: 0% 0%;
-    margin-left: 5em;
+    margin-left: 5em; /* Met une distance entre la limite de page et le titre */
     margin-right: 5em;
-}
+} 
 
-.cbouton{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    border-color: var(--third-color);
-    border-width: 0.2em;
-    border-style: solid;
-    margin-top: -3em;
+.cbouton{ /* Le contenant du bouton */
+    display:grid; /* L'emplacement des boutons est basé sur une grille */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 1fr = 1/len(grid-template-columns) */
+    border-color: var(--third-color); /* Couleur de la bordure */
+    border-width: 0.2em; /* Graisseur de la bordure */
+    border-bottom-style: solid; /* Je mets la bordure en ligne droite */
+    margin-top: -3em; /* Je fais en sorte que la boite sorte un peu de la page HTML */
     margin-left: -2em;
     margin-right: -2em;
-    background: var(--font-color);
+    background: var(--font-color); /* je définis la couleur du background avec la DA du site */
 }
-.bouton{
-    box-shadow: 0 200px 100px -100px white inset; 
-    transition: box-shadow 0.25s;
-    border: 0;
-    line-height: 3em;
-    margin-bottom: -0.1em;
-    text-align: center;
-    color: black;
+.bouton{ /* Le bouton ( de base ) */
+    box-shadow: 0 200px 100px -100px white inset; /* Utilise le systéme de shadow pour faire un semblant d'animation */
+    transition: box-shadow 0.25s; /* puis en fais une transistion */
+    border: 0; /* Pas de bordure */
+    line-height: 3em; /* Taille d'écriture */
+    margin-bottom: -0.1em; /* Distance de sécurité */
+    color: black; /* Met le texte en noir */
 }
-.bouton:hover {
-    box-shadow: 0 200px 100px -100px var(--third-color) inset;
+.bouton:hover { /* Quand le bouton est survolé */
+    box-shadow: 0 200px 100px -100px var(--third-color) inset; /* Utilise la ligne initiant la transition pour mettre une autre couleur */
 }
 
-.bouton:active{
+.bouton:active{ /* Quand le bouton est appuyé */
     background-color: #fc8130;
 }
 
-#debut{
-    padding-top: 2%
+#debut{/* Comprend le h1 + le carré de recherche */
+    padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
+    padding-bottom: 3%; /* ...et les résultats du dessous */
 }
-#op{
-    position: relative;
-    top: 0.5em;
-    right:45%;
+#logo{ /*Logo*/
+    position: relative; /*Permet de facilement mettre le logo*/
+    top: -0.3em; /*Le placement de base n'étant pas bon, on le recule*/
+    right:47%; /*Le placement des objets est central de base, on le met donc à l'extrémité gauche*/
 }
 
 input { /*Barre de recherche*/
