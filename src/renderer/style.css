@@ -6,16 +6,56 @@
     --third-color : #F29559;
 }
 
-body {
+body { 
     background-color: var(--background-color);
-    font-family: Arial, sans-serif; /*Police d'écriture*/
-    text-align: center; /*J'aligne le contenu de la page au centre*/
+    font-family: Arial, sans-serif; 
+    text-align: center; 
     padding: 20px; /*Je pose une marge autour de la page*/
 }
 
-h1 {
-    padding: 0% 0%;
+h1{
     background-color: var(--secondary-color);
+    padding: 0% 0%;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+.cbouton{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    border-color: var(--third-color);
+    border-width: 0.2em;
+    border-style: solid;
+    margin-top: -3em;
+    margin-left: -2em;
+    margin-right: -2em;
+    background: var(--font-color);
+}
+.bouton{
+    box-shadow: 0 200px 100px -100px white inset; 
+    transition: box-shadow 0.25s;
+    border: 0;
+    line-height: 3em;
+    font-size: 1.3rem;
+    margin-bottom: -0.1em;
+    text-align: center;
+    color: black;
+}
+.bouton:hover {
+    box-shadow: 0 200px 100px -100px var(--third-color) inset;
+}
+
+.bouton:active{
+    background-color: #fc8130;
+}
+
+#debut{
+    padding-top: 2%
+}
+#op{
+    position: relative;
+    top: 0.5em;
+    right:45%;
 }
 
 input { /*Barre de recherche*/
@@ -39,6 +79,7 @@ input { /*Barre de recherche*/
     width: 150px; /*La longueur de l'affiche*/
     height: auto; /*La hauteur de l'affiche en gardant les proportions*/
 }
+
 .poster { /*L'affiche d'un résultat dans details.html*/
     width: 300px; /*Affiche plus grande*/
     height: auto;
