@@ -4,6 +4,7 @@
     --font-color : #B8B08D;
     --secondary-color : #F2D492;
     --third-color : #F29559; 
+    --third-text-color : #fc8130;
 }
 
 body {  /* Les paramétres universelles de la/les page(s) */
@@ -13,11 +14,26 @@ body {  /* Les paramétres universelles de la/les page(s) */
     padding: 20px; /*Je pose une marge autour de la page*/
 }
 
-h1{ /* Le titre principal */
-    background-color: var(--secondary-color);
-    margin-left: 5em; /* Met une distance entre la limite de page et le titre */
-    margin-right: 5em;
-} 
+#accueil{
+    padding-top: 5em;
+    h1 {
+        background-color: #F29559;
+    }
+    p {
+        color: #F29559;
+    }
+}
+#debut{/* Comprend le h1 + le carré de recherche */
+    h1{ /* Le titre principal */
+        background-color: var(--secondary-color);
+        margin-left: 5em; /* Met une distance entre la limite de page et le titre */
+        margin-right: 5em;
+    } 
+    padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
+    padding-bottom: 3%; /* ...et les résultats du dessous */
+}
+
+
 
 .cbouton{ /* Le contenant du bouton */
     display:grid; /* L'emplacement des boutons est basé sur une grille */
@@ -33,6 +49,8 @@ h1{ /* Le titre principal */
 .bouton{ /* Le bouton ( de base ) */
     box-shadow: 0 200px 100px -100px white inset; /* Utilise le systéme de shadow pour faire un semblant d'animation */
     transition: box-shadow 0.25s; /* puis en fais une transistion */
+    padding-left: 1em;
+    padding-right: 1em;
     border: 0; /* Pas de bordure */
     line-height: 3em; /* Taille d'écriture */
     margin-bottom: -0.1em; /* Distance de sécurité */
@@ -43,16 +61,13 @@ h1{ /* Le titre principal */
 }
 
 .bouton:active{ /* Quand le bouton est appuyé */
-    background-color: #fc8130;
+    background-color: var(--third-text-color);
 }
 
-#debut{/* Comprend le h1 + le carré de recherche */
-    padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
-    padding-bottom: 3%; /* ...et les résultats du dessous */
-}
+
 #logo{ /*Logo*/
     position: relative; /*Permet de facilement mettre le logo*/
-    top: -0.3em; /*Le placement de base n'étant pas bon, on le recule*/
+    top: -1em; /*Le placement de base n'étant pas bon, on le recule*/
     right:47%; /*Le placement des objets est central de base, on le met donc à l'extrémité gauche*/
 }
 
@@ -67,7 +82,13 @@ input { /*Barre de recherche*/
     justify-content: center; /*Centre par défaut les élements sur la page*/
     border:ridge 2px var(--third-color);
     border-style: solid;
-    color:#fc8130;
+    color:var(--third-text-color);
+}
+#release_date{
+    color:var(--third-text-color);
+}
+#overview{
+    color:var(--third-text-color);
 }
 .movie-item { /*Les résultats de recherche*/
     margin: 10px; /*L'espace entre tous les résultats*/
