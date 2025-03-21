@@ -33,8 +33,6 @@ body {  /* Les paramétres universelles de la/les page(s) */
     padding-bottom: 3%; /* ...et les résultats du dessous */
 }
 
-
-
 .cbouton{ /* Le contenant du bouton */
     display:grid; /* L'emplacement des boutons est basé sur une grille */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 1fr = 1/len(grid-template-columns) */
