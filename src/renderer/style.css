@@ -14,16 +14,16 @@ body {  /* Les paramétres universelles de la/les page(s) */
     padding: 20px; /*Je pose une marge autour de la page*/
 }
 
-#accueil{
-    padding-top: 5em;
-    h1 {
-        background-color: #F29559;
+#accueil{/* Comprend le h1 + le carré de recherche de la page d'accueil */
+    padding-top: 5em;/*Laisse de l'espace entre l'interface supérieur et les élements d'accueil*/
+    h1 {/* Titre principal */
+        background-color: var(--third-text-color);
     }
-    p {
-        color: #F29559;
+    p {/* Paragraphe */
+        color: var(--third-text-color);
     }
 }
-#debut{/* Comprend le h1 + le carré de recherche */
+#debut{/* Comprend le h1 + le carré de recherche des pages de recherches */
     h1{ /* Le titre principal */
         background-color: var(--secondary-color);
         margin-left: 5em; /* Met une distance entre la limite de page et le titre */
@@ -82,7 +82,7 @@ input { /*Barre de recherche*/
     border-style: solid;
     color:var(--third-text-color);
 }
-#release_date{
+#release_date{/*Texte de résultats : la date de sortie*/
     color:var(--third-text-color);
 }
 #overview{
