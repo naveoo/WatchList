@@ -2,10 +2,14 @@ const { ipcRenderer } = require('electron');
 
 async function loadMovieDetails() {
     const movieId = localStorage.getItem('selectedMovieId');
-    if (!movieId) return;
+    if (!movieId) {
+        return;
+    }
 
     const movie = await ipcRenderer.invoke('get-movie-details', movieId);
-    if (!movie) return;
+    if (!movie) {
+        return;
+    }
 
     const titleElement = document.getElementById('title');
     const posterElement = document.getElementById('poster');
@@ -18,15 +22,11 @@ async function loadMovieDetails() {
     if (overviewElement) overviewElement.textContent = movie.overview;
 }
 
-function goBack() {
-    window.location.href = '../renderer/index.html';
-}
-
-loadMovieDetails();
-
 document.getElementById('addFavoriteButton')?.addEventListener('click', async () => {
     const movieId = localStorage.getItem('selectedMovieId');
-    if (!movieId) return;
+    if (!movieId) {
+        return;
+    }
 
     const movie = {
         id: movieId,
@@ -35,10 +35,7 @@ document.getElementById('addFavoriteButton')?.addEventListener('click', async ()
         release_date: document.getElementById('release_date')?.textContent
     };
 
-    console.log('Tentative d\'ajout du film aux favoris:', movie);
     if (movie.title && movie.poster && movie.release_date) {
         await ipcRenderer.invoke('add-favorite', movie);
-    } else {
-        alert("Erreur lors de l'ajout aux favoris");
     }
 });

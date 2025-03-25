@@ -7,23 +7,81 @@
     --third-text-color : #fc8130;
 }
 
-body {  /* Les paramétres universelles de la/les page(s) */
+body {  /* Les paramétres universels de la/les page(s) */
+    margin: 0;
+    padding: 0;
     background-color: var(--background-color); /* Définit la couleurs de fond */
     font-family: Arial, sans-serif; /* Définit la police de texte */
     text-align: center; /* Met le texte au centre */
-    padding: 20px; /*Je pose une marge autour de la page*/
+    /*padding: 20px; Il ne faut pas poser de marges en tour de page mais uniquement sur les élements qui en ont besoin pour des besoins de responsive ^^*/
 }
 
-#accueil{/* Comprend le h1 + le carré de recherche de la page d'accueil */
-    padding-top: 5em;/*Laisse de l'espace entre l'interface supérieur et les élements d'accueil*/
-    h1 {/* Titre principal */
-        background-color: var(--third-text-color);
-    }
-    p {/* Paragraphe */
-        color: var(--third-text-color);
-    }
+/*
+=========================
+     Barre de naviguation
+=========================
+*/
+
+header {
+    display: flex; /*Alignement responsive du logo et des liens pour l'adapter à toute taille d'écran*/
+    justify-content: space-between; /*Espace entre le logo et la navigation */
+    align-items: center; /*Les aligner au millieu de fenetre*/
+    padding: 1em; /*Espace minimum entre eux*/
+    background-color: var(--font-color); /*Fond de la topbar */
 }
-#debut{/* Comprend le h1 + le carré de recherche des pages de recherches */
+
+.logo-container img {
+    height: 30px; /*Taille du logo */
+}
+
+nav ul {
+    display: flex; /*Alignement responsive des liens*/
+    padding: 0;
+    margin: 0;
+    list-style: none; /*Enlève les points moches des li */
+}
+
+nav ul li {
+    margin-right: 20px; /*Espace entre chaque lien */
+}
+
+nav ul li {
+    cursor: pointer; /*Mettre le curseur en pointeur pour montrer que c'est cliquable*/
+    display: inline-block; /*Pour que le padding et les dimensions fonctionnent */
+    padding: 10px 20px; /*Ecartement des items par rapport aux autres*/
+    background-color: transparent; /*Couleur de fond de base*/
+    font-size: 1em; /*Taille de police*/
+    text-align: center; /*Mise du texte au centre*/
+    border-radius: 5px; /*Bordures arrondies */
+    box-shadow: 0 200px 100px -100px white inset; /*Ombre interne*/
+    transition: box-shadow 0.25s, background-color 0.25s, color 0.25s; /*Transition pour l'ombre, fond et texte*/
+}
+nav ul li a{
+    color: black; /*Couleur du texte*/
+    text-decoration: none; /*Enlever le soulignage*/
+}
+
+nav ul li:hover {
+    box-shadow: 0 200px 100px -100px var(--third-color) inset; /*Ombre interne avec une autre couleur*/
+    background-color: var(--third-color); /*Fond coloré au survol*/
+    color: white; /*Changer la couleur du texte*/
+}
+
+nav ul li:active {
+    background-color: var(--third-text-color); /*Fond lors du clic*/
+}
+
+/*
+=========================
+     Page d'accueil
+=========================
+*/
+
+h1 {
+    background-color: var(--third-text-color);
+}
+
+.searchForm{/* Comprend le h1 + le carré de recherche des pages de recherches */
     h1{ /* Le titre principal */
         background-color: var(--secondary-color);
         margin-left: 5em; /* Met une distance entre la limite de page et le titre */
@@ -31,42 +89,6 @@ body {  /* Les paramétres universelles de la/les page(s) */
     } 
     padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
     padding-bottom: 3%; /* ...et les résultats du dessous */
-}
-
-.cbouton{ /* Le contenant du bouton */
-    display:grid; /* L'emplacement des boutons est basé sur une grille */
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 1fr = 1/len(grid-template-columns) */
-    border-color: var(--third-color); /* Couleur de la bordure */
-    border-width: 0.2em; /* Graisseur de la bordure */
-    border-bottom-style: solid; /* Je mets la bordure en ligne droite */
-    margin-top: -3em; /* Je fais en sorte que la boite sorte un peu de la page HTML */
-    margin-left: -2em;
-    margin-right: -2em;
-    background: var(--font-color); /* je définis la couleur du background avec la DA du site */
-}
-.bouton{ /* Le bouton ( de base ) */
-    box-shadow: 0 200px 100px -100px white inset; /* Utilise le systéme de shadow pour faire un semblant d'animation */
-    transition: box-shadow 0.25s; /* puis en fais une transistion */
-    padding-left: 1em;
-    padding-right: 1em;
-    border: 0; /* Pas de bordure */
-    line-height: 3em; /* Taille d'écriture */
-    margin-bottom: -0.1em; /* Distance de sécurité */
-    color: black; /* Met le texte en noir */
-}
-.bouton:hover { /* Quand le bouton est survolé */
-    box-shadow: 0 200px 100px -100px var(--third-color) inset; /* Utilise la ligne initiant la transition pour mettre une autre couleur */
-}
-
-.bouton:active{ /* Quand le bouton est appuyé */
-    background-color: var(--third-text-color);
-}
-
-
-#logo{ /*Logo*/
-    position: relative; /*Permet de facilement mettre le logo*/
-    top: -1em; /*Le placement de base n'étant pas bon, on le recule*/
-    right:47%; /*Le placement des objets est central de base, on le met donc à l'extrémité gauche*/
 }
 
 input { /*Barre de recherche*/
@@ -88,6 +110,13 @@ input { /*Barre de recherche*/
 #overview{
     color:var(--third-text-color);
 }
+
+/*
+=========================
+     Details
+=========================
+*/
+
 .movie-item { /*Les résultats de recherche*/
     margin: 10px; /*L'espace entre tous les résultats*/
     text-align: center; /*Centrer le nom du film sous l'image*/
