@@ -27,3 +27,30 @@ function displayMovies(movies) {
         movieList.appendChild(movieItem);
     });
 }
+
+document.addEventListener('click', async (event) => {
+    if (event.target.classList.contains('add-favorite')) {
+        const movie = {
+            id: event.target.dataset.id,
+            title: event.target.dataset.title,
+            poster: event.target.dataset.poster
+        };
+        window.electron.send('add-favorite', movie);
+        alert('Ajouté aux favoris !');
+    }
+});
+
+if (document.getElementById('favoritesContainer')) {
+    window.electron.invoke('get-favorites').then(favorites => {
+        const container = document.getElementById('favoritesContainer');
+        favorites.forEach(movie => {
+            const movieElement = document.createElement('div');
+            movieElement.classList.add('movie');
+            movieElement.innerHTML = `
+                <img src="${movie.poster}" alt="${movie.title}">
+                <p>${movie.title}</p>
+            `;
+            container.appendChild(movieElement);
+        });
+    });
+}

@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>WatchList</title>
-    <link rel="Stylesheet" href="style.css" type="text/css" />
 </head>
-
 <body>
     <img id="logo" src="test.jpg" height="30"/>
     <div class="cbouton">
@@ -18,11 +17,12 @@
         <div><a href="recherche_acteur.html"><button class="bouton" type="button">Acteur</button></a></div>
         <div><a href="favoris.html"><button class="bouton" type="button">Favoris</button></a></div>
     </div>
-    
-    <div id = "accueil">
-        <h1>Bienvenue sur WatchList</h1>
-        <p>Le site permettant de rechercher des informations sur un film ou un acteur facilement !</p>
-        <p>Tout d'abord, veuillez sélectionner un domaine de recherche.</p>
-    </div>
+
+    <h1>Liste des films favoris</h1>
+    <div id="favorites"></div>
+    <button onclick="goBack()">Retour</button>
+
+    <script src="favoris.js"></script>
+
 </body>
 </html>

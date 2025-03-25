@@ -7,10 +7,15 @@ async function loadMovieDetails() {
     const movie = await ipcRenderer.invoke('get-movie-details', movieId);
     if (!movie) return;
 
-    document.getElementById('title').textContent = movie.title;
-    document.getElementById('poster').src = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
-    document.getElementById('release_date').textContent = movie.release_date;
-    document.getElementById('overview').textContent = movie.overview;
+    const titleElement = document.getElementById('title');
+    const posterElement = document.getElementById('poster');
+    const releaseDateElement = document.getElementById('release_date');
+    const overviewElement = document.getElementById('overview');
+
+    if (titleElement) titleElement.textContent = movie.title;
+    if (posterElement) posterElement.src = `https://image.tmdb.org/t/p/w300${movie.poster_path}`;
+    if (releaseDateElement) releaseDateElement.textContent = movie.release_date;
+    if (overviewElement) overviewElement.textContent = movie.overview;
 }
 
 function goBack() {
@@ -18,3 +23,22 @@ function goBack() {
 }
 
 loadMovieDetails();
+
+document.getElementById('addFavoriteButton')?.addEventListener('click', async () => {
+    const movieId = localStorage.getItem('selectedMovieId');
+    if (!movieId) return;
+
+    const movie = {
+        id: movieId,
+        title: document.getElementById('title')?.textContent,
+        poster: document.getElementById('poster')?.src,
+        release_date: document.getElementById('release_date')?.textContent
+    };
+
+    console.log('Tentative d\'ajout du film aux favoris:', movie);
+    if (movie.title && movie.poster && movie.release_date) {
+        await ipcRenderer.invoke('add-favorite', movie);
+    } else {
+        alert("Erreur lors de l'ajout aux favoris");
+    }
+});
