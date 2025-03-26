@@ -21,51 +21,28 @@ body {  /* Les paramétres universels de la/les page(s) */
      Barre de naviguation
 =========================
 */
-/* Le corps du site */
-.wrapper{ /*Le corps de la grille CSS*/
-    display: grid;
-    grid-template-columns: 1fr 5fr; /*Organise l'espace*/
-    grid-template-areas:
-        "logo bouton_sup"           /*Logo | Bouton supérieur*/
-        "barre_lateral main";       /*Barre lateral | Le contenu*/
-}
+
 header {
-    display: flex;
+    display: flex; /*Alignement responsive du logo et des liens pour l'adapter à toute taille d'écran*/
     justify-content: space-between; /*Espace entre le logo et la navigation */
     align-items: center; /*Les aligner au millieu de fenetre*/
     padding: 1em; /*Espace minimum entre eux*/
     background-color: var(--font-color); /*Fond de la topbar */
-
 }
 
-.logo-container {
-    grid-area: logo;
-}
 .logo-container img {
-    display: flex;
     height: 30px; /*Taille du logo */
-    margin: auto;
 }
 
-.nav123 {
-    grid-area: barre_lateral; /* cette classe doit être dans "barre_latéral" de la grille CSS*/
-    background-color: var(--font-color);
-    border-color: var(--third-color);
-    border-right-style:solid ;
-    padding-bottom: 300%;
-}
-nav {
-    grid-area: bouton_sup; /* cette classe doit être dans "bouton_sup" de la grille CSS*/
-    background-color: var(--font-color);
-}
 nav ul {
-    display: flex;
+    display: flex; /*Alignement responsive des liens*/
+    padding: 0;
+    margin: 0;
     list-style: none; /*Enlève les points moches des li */
 }
 
 nav ul li {
     margin-right: 20px; /*Espace entre chaque lien */
-    margin: auto;
 }
 
 nav ul li {
@@ -102,15 +79,6 @@ nav ul li:active {
 
 h1 {
     background-color: var(--third-text-color);
-}
-.content{/* Comprend le h1 + le carré de recherche de la page d'accueil */
-    grid-area: main;
-}
-.content h1 {/* Titre principal */
-    background-color: var(--third-text-color);
-}
-.content p {/* Paragraphe */
-    color: var(--third-text-color);
 }
 
 .searchForm{/* Comprend le h1 + le carré de recherche des pages de recherches */
