@@ -23,6 +23,11 @@ body {  /* Les paramétres universels de la/les page(s) */
 */
 
 header {
+    z-index: +1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex; /*Alignement responsive du logo et des liens pour l'adapter à toute taille d'écran*/
     justify-content: space-between; /*Espace entre le logo et la navigation */
     align-items: center; /*Les aligner au millieu de fenetre*/
@@ -34,18 +39,18 @@ header {
     height: 30px; /*Taille du logo */
 }
 
-nav ul {
+.topbar ul {
     display: flex; /*Alignement responsive des liens*/
     padding: 0;
     margin: 0;
     list-style: none; /*Enlève les points moches des li */
 }
 
-nav ul li {
+.topbar ul li {
     margin-right: 20px; /*Espace entre chaque lien */
 }
 
-nav ul li {
+.topbar ul li {
     cursor: pointer; /*Mettre le curseur en pointeur pour montrer que c'est cliquable*/
     display: inline-block; /*Pour que le padding et les dimensions fonctionnent */
     padding: 10px 20px; /*Ecartement des items par rapport aux autres*/
@@ -56,19 +61,44 @@ nav ul li {
     box-shadow: 0 200px 100px -100px white inset; /*Ombre interne*/
     transition: box-shadow 0.25s, background-color 0.25s, color 0.25s; /*Transition pour l'ombre, fond et texte*/
 }
-nav ul li a{
+.topbar ul li a{
     color: black; /*Couleur du texte*/
     text-decoration: none; /*Enlever le soulignage*/
 }
 
-nav ul li:hover {
+.topbar ul li:hover {
     box-shadow: 0 200px 100px -100px var(--third-color) inset; /*Ombre interne avec une autre couleur*/
     background-color: var(--third-color); /*Fond coloré au survol*/
     color: white; /*Changer la couleur du texte*/
 }
 
-nav ul li:active {
+.topbar ul li:active {
     background-color: var(--third-text-color); /*Fond lors du clic*/
+}
+.sidebar {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    background-color: var(--font-color);
+    width: 15%;
+    top: 0;
+    bottom: 0;
+}
+.sidebar ul {
+    position: absolute;
+    list-style: none;
+    top: 10%;
+}
+.sidebar ul li {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: black;
 }
 
 /*
@@ -89,6 +119,9 @@ h1 {
     } 
     padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
     padding-bottom: 3%; /* ...et les résultats du dessous */
+}
+.content {
+    margin-left: 15%;
 }
 
 input { /*Barre de recherche*/

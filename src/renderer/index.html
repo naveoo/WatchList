@@ -8,12 +8,12 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo-container">
+    <header class="logo-container">
+        <div class="logo_container">
             <img src="../../assets/logo.png" alt="logo"/>
         </div>
-        <nav>
-            <ul>
+        <nav class="topbar">
+            <ul> 
                 <li><a href="favorites.html">Mes favoris</a></li>
                 <li><a href="#">A voir</a></li>
                 <li><a href="#">TimeSetter</a></li>
@@ -22,24 +22,90 @@
         </nav>
     </header>
 
-    <h1>WatchList</h1>
+    <!-- NB : Changer le nav123 par une liste des favoris-->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="">nav1</a></li>
+            <li><a href="">nav2</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+            <li><a href="">nav3</a></li>
+        </ul>
+    </nav>
 
-    <section class="searchForm">
-        <h1>Recherche de Films</h1>
-        <input type="text" id="searchInput" placeholder="Rechercher..." /><br>
-        <label for="researchSubject">Choisir le sujet de recherche :</label>
-        <select name="reseach_subject" id="researchSubject">
-            <option value="title">Titre</option>
-            <option value="director">Réalisateur</option>
-            <option value="actor">Acteur</option>
-        </select>
-    </section>
+    <div class="content">
+        <h1>WatchList</h1>
 
-    <div class="movie-list" id="movieList"></div>
+        <section class="searchForm">
+            <h1>Recherche de Films</h1>
+            <input type="text" id="searchInput" placeholder="Rechercher..." /><br>
+            <label for="researchSubject">Choisir le sujet de recherche :</label>
+            <select name="reseach_subject" id="researchSubject">
+                <option value="title">Titre</option>
+                <option value="director">Réalisateur</option>
+                <option value="actor">Acteur</option>
+            </select>
+        </section>
 
-    <a id="detailsLink" href="details.html" style="display: none;"></a>
-    <h1 id="title"></h1>
-    <img id="poster" src="" alt="" class="poster">
+        <div class="movie-list" id="movieList"></div>
+
+        <a id="detailsLink" href="details.html" style="display: none;"></a>
+        <h1 id="title"></h1>
+        <img id="poster" src="" alt="" class="poster">
+    </div>
 
     <script src="renderers/index_renderer.js"></script>
 </body>
