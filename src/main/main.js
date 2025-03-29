@@ -39,7 +39,7 @@ app.whenReady().then(() => {
             responseHeaders: {
                 ...details.responseHeaders,
                 'Content-Security-Policy': [
-                    "default-src 'self'; img-src 'self' https://image.tmdb.org https://via.placeholder.com;' 'unsafe-inline';"
+                    "default-src 'self'; img-src 'self' https://image.tmdb.org; script-src 'self' 'unsafe-inline';"
                 ]
             }
         });
