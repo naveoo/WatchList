@@ -17,22 +17,29 @@ async function triggerSearch() {
     displayMovies(movies);
 }
 
+const searchResultsContainer = document.getElementById('movieList');
+
 function displayMovies(movies) {
-    const movieList = document.getElementById('movieList');
-    movieList.innerHTML = '';
-    
+    searchResultsContainer.innerHTML = '';
+
     movies.forEach(movie => {
-        const movieItem = document.createElement('div');
-        movieItem.classList.add('movie-item');
-        movieItem.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.title}" class="preview_poster" />
-            <p><strong>${movie.title}</strong></p>
-            <p>${movie.release_date}</p>
+        console.log(`Film: ${movie.title} | Poster: ${movie.poster}`);
+
+        const movieElement = document.createElement('div');
+        movieElement.classList.add('movie');
+        movieElement.dataset.id = movie.id;
+        movieElement.innerHTML = `
+            <img src="${movie.poster || '../../assets/placeholder-not-found.png'}" 
+                 alt="${movie.title}" width="100">
+            <p>${movie.title}</p>
         `;
-        movieItem.addEventListener('click', () => {
+
+        movieElement.addEventListener('click', () => {
+            console.log('Film sélectionné :', movie.id);
             localStorage.setItem('selectedMovieId', movie.id);
-            document.getElementById('detailsLink').click();
-        });        
-        movieList.appendChild(movieItem);
+            window.location.href = 'details.html';
+        });
+
+        searchResultsContainer.appendChild(movieElement);
     });
 }

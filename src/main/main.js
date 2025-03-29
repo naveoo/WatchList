@@ -39,7 +39,7 @@ app.whenReady().then(() => {
             responseHeaders: {
                 ...details.responseHeaders,
                 'Content-Security-Policy': [
-                    "default-src 'self'; img-src 'self' https://image.tmdb.org data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';"
+                    "default-src 'self'; img-src 'self' https://image.tmdb.org https://via.placeholder.com;' 'unsafe-inline';"
                 ]
             }
         });
@@ -71,12 +71,13 @@ ipcMain.handle('search-movies', async (event, { query, searchSubject }) => {
             params: { api_key: API_KEY, [searchField]: query, language: 'fr-FR' }
         });
 
-        
         if (searchSubject === 'title') {
             return response.data.results.map(movie => ({
                 id: movie.id,
                 title: movie.title,
-                poster: movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : '',
+                poster: movie.poster_path 
+                    ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+                    : '../../assets/placeholder-not-found.png',
                 release_date: movie.release_date
             }));
         } else {
@@ -90,7 +91,9 @@ ipcMain.handle('search-movies', async (event, { query, searchSubject }) => {
                     movies.push({
                         id: movie.id,
                         title: movie.title,
-                        poster: movie.poster_path ? `https://image.tmdb.org/t/p/w200${movie.poster_path}` : '',
+                        poster: movie.poster_path 
+                            ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+                            : '../../assets/placeholder-not-found.png',
                         release_date: movie.release_date
                     });
                 });
@@ -98,9 +101,11 @@ ipcMain.handle('search-movies', async (event, { query, searchSubject }) => {
             return movies;
         }
     } catch (error) {
+        console.error('Erreur lors de la recherche des films:', error);
         return [];
     }
 });
+
 
 ipcMain.handle('add-favorite', (event, movie) => {
     db.run(`INSERT OR IGNORE INTO favorites (movie_id, title, poster, release_date) VALUES (?, ?, ?, ?)`, 
