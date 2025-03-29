@@ -16,15 +16,6 @@ const db = new sqlite3.Database(dbPath, (err) => {
     }
 });
 
-db.run(`CREATE TABLE IF NOT EXISTS favorites (
-    id INTEGER PRIMARY KEY,
-    movie_id INTEGER UNIQUE,
-    title TEXT,
-    poster TEXT,
-    release_date TEXT
-)`
-);
-
 app.commandLine.appendSwitch('disable-gpu');
 app.setPath('userData', path.join(__dirname, '../cache'));
 
@@ -135,6 +126,52 @@ ipcMain.handle('remove-favorite', (event, movieId) => {
                 return reject(err);
             }
             resolve();
+        });
+    });
+});
+ipcMain.handle('add-to-watchlist', async (event, movieId) => {
+    try {
+        const response = await axios.get(`${BASE_URL}/movie/${movieId}`, {
+            params: { api_key: API_KEY, language: 'fr-FR' }
+        });
+        const movie = response.data;
+
+        db.run(`INSERT OR IGNORE INTO watchlist (movie_id, title, poster, release_date, duration) VALUES (?, ?, ?, ?, ?)`, 
+            [movie.id, movie.title, `https://image.tmdb.org/t/p/w200${movie.poster_path}`, movie.release_date, movie.runtime], 
+            (err) => {
+                if (err) {
+                    console.error('Erreur lors de l\'ajout à la watchlist:', err.message);
+                } else {
+                    console.log('Film ajouté à la watchlist avec succès !');
+                }
+            }
+        );
+    } catch (error) {
+        console.error('Erreur lors de la récupération des détails du film:', error);
+    }
+});
+
+ipcMain.handle('get-watchlist', async () => {
+    return new Promise((resolve, reject) => {
+        db.all("SELECT * FROM watchlist", (err, rows) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(rows);
+            }
+        });
+    });
+});
+
+
+ipcMain.handle('remove-from-watchlist', async (event, movieId) => {
+    return new Promise((resolve, reject) => {
+        db.run("DELETE FROM watchlist WHERE movie_id = ?", [movieId], function (err) {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(true);
+            }
         });
     });
 });

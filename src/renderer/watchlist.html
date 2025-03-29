@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Watchlist</title>
+</head>
+<body>
+    <h1>Ma Watchlist</h1>
+    <div id="watchlist"></div>
+    <a href="index.html"><button>Retour</button></a>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadWatchlist();
+        });
+    </script>
+    <script src="./renderers/watchlist_renderer.js"></script>
+</body>
+</html>
