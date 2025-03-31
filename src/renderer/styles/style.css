@@ -75,31 +75,6 @@ header {
 .topbar ul li:active {
     background-color: var(--third-text-color); /*Fond lors du clic*/
 }
-.sidebar {
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    background-color: var(--font-color);
-    width: 15%;
-    top: 0;
-    bottom: 0;
-}
-.sidebar ul {
-    position: absolute;
-    list-style: none;
-    top: 10%;
-}
-.sidebar ul li {
-    cursor: pointer;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 5px;
-    background-color: white;
-}
-.sidebar ul li a {
-    text-decoration: none;
-    color: black;
-}
 
 /*
 =========================
@@ -120,8 +95,8 @@ h1 {
     padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
     padding-bottom: 3%; /* ...et les résultats du dessous */
 }
-.content {
-    margin-left: 15%;
+.content button {
+    margin-top: 15%;
 }
 
 input { /*Barre de recherche*/
