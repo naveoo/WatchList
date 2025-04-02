@@ -89,13 +89,8 @@ h1 {
     padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
     padding-bottom: 3%; /* ...et les résultats du dessous */
 }
-.searchForm h1{ /* Le h1 du carré de recherche des pages de recherches */
-    background-color: var(--secondary-color);
-    margin-left: 5em; /* Met une distance entre la limite de page et le titre */
-    margin-right: 5em;
-}
-.content button {
-    margin-top: 15%;
+.content{
+    padding-top: 4em;
 }
 
 input { /*Barre de recherche*/
