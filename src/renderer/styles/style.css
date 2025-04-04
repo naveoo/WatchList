@@ -38,13 +38,13 @@ header {
     height: 30px; /*Taille du logo */
 }
 
-.titre{
-    background-color: var(--secondary-color);
-    padding: 0.5em 3em;
-    border-radius: 3%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: large;
-    font-style: oblique;
+.titre{ /* Le titre du site dans la topbar */
+    background-color: var(--secondary-color); /* Met le background dans une teinture différent de la topbar */
+    padding: 0.5em 3em; /* Etend la boîte de 0.5em vers le haut/bas et de 3em vers la droite/gauche */
+    border-radius: 3%; /* Lisse les bords pour faire un semblant d'effet */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Définis la police */
+    font-size: large; /* Définis la taille d'écriture */
+    font-style: oblique; /* Définis le style d'écriture => Oblique */
 }
 
 .topbar ul {
@@ -90,7 +90,7 @@ header {
 =========================
 */
 
-h1 { 
+h1 { /* Classe s'occupant des titres de pages */
     background-color: var(--third-text-color);
 }
 
@@ -102,7 +102,7 @@ h1 {
     padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
     padding-bottom: 3%; /* ...et les résultats du dessous */
 }
-.content{
+.content{ /* Mise en page de la page de manière général */
     padding-top: 4em;
 }
 
