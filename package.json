@@ -1,13 +1,13 @@
 {
   "name": "watchlist",
-  "version": "1.0.0",
+  "version": "1.2.5",
   "main": "src/main/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },
   "keywords": [],
-  "author": "Ethan Legris",
+  "author": "Legris Ethan, Znatchko-Yavorsky Gabriel, Dornias Allistair",
   "license": "ISC",
   "description": "",
   "devDependencies": {
