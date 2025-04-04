@@ -8,19 +8,28 @@
 </head>
 
 <body>
+    <!-- La topbar -->
     <header>
+        <!-- Logo -->
         <div class="logo-container">
             <img src="../../assets/logo.png" alt="logo"/>
         </div>
-        <nav>
+
+        <!-- Titre du site -->
+        <div class="titre"> WatchList </div>
+
+        <!-- Les Boutons -->
+        <nav class="topbar">
             <ul>
                 <li><a href="favorites.html">Mes favoris</a></li>
-                <li><a href="#">A voir</a></li>
+                <li><a href="watchlist.html">A voir</a></li>
                 <li><a href="#">TimeSetter</a></li>
                 <li><a href="#">Autre...</a></li>
             </ul>
         </nav>
     </header> 
+
+    <!-- Le Contenu de la Page -->
     <div class="content">
         <h1 id="title"></h1>
         <img id="poster" src="" alt="" class="poster">
@@ -30,6 +39,8 @@
         <button id="watchlistButton">À regarder plus tard</button>
         <a href="index.html"><button>Retour</button></a>
     </div>
+
+    <!-- Le script JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             loadMovieDetails();

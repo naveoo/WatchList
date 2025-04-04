@@ -34,8 +34,17 @@ header {
     background-color: var(--font-color); /*Fond de la topbar */
 }
 
-.logo-container img {
+.logo-container img{
     height: 30px; /*Taille du logo */
+}
+
+.titre{ /* Le titre du site dans la topbar */
+    background-color: var(--secondary-color); /* Met le background dans une teinture différent de la topbar */
+    padding: 0.5em 3em; /* Etend la boîte de 0.5em vers le haut/bas et de 3em vers la droite/gauche */
+    border-radius: 3%; /* Lisse les bords pour faire un semblant d'effet */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Définis la police */
+    font-size: large; /* Définis la taille d'écriture */
+    font-style: oblique; /* Définis le style d'écriture => Oblique */
 }
 
 .topbar ul {
@@ -49,7 +58,7 @@ header {
     margin-right: 20px; /*Espace entre chaque lien */
 }
 
-.topbar ul li {
+.topbar ul li a {
     cursor: pointer; /*Mettre le curseur en pointeur pour montrer que c'est cliquable*/
     display: inline-block; /*Pour que le padding et les dimensions fonctionnent */
     padding: 10px 20px; /*Ecartement des items par rapport aux autres*/
@@ -81,15 +90,19 @@ header {
 =========================
 */
 
-h1 {
+h1 { /* Classe s'occupant des titres de pages */
     background-color: var(--third-text-color);
+}
+
+.base_text{ /* Classe à mettre pour mettre un texte spécifique en orange */
+    color: var(--third-text-color);
 }
 
 .searchForm{/* Le carré de recherche des pages de recherches */
     padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
     padding-bottom: 3%; /* ...et les résultats du dessous */
 }
-.content{
+.content{ /* Mise en page de la page de manière général */
     padding-top: 4em;
 }
 
