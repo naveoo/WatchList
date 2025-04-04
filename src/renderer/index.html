@@ -9,10 +9,11 @@
 </head>
 
 <body>
-    <header class="logo-container">
-        <div class="logo_container">
+    <header>
+        <div class="logo-container">
             <img src="../../assets/logo.png" alt="logo"/>
         </div>
+        <div class="titre"> Watchlist </div>
         <nav class="topbar">
             <ul> 
                 <li><a href="favorites.html">Mes favoris</a></li>
@@ -24,10 +25,13 @@
     </header>
 
     <div class="content">
+
+        <!-- TITRE A METTRE -->
+
         <section class="searchForm">
             <h1>Recherche de Films</h1>
             <input type="text" id="searchInput" placeholder="Rechercher..." /><br>
-            <label for="researchSubject">Choisir le sujet de recherche :</label>
+            <label class="base_text" for="researchSubject">Choisir le sujet de recherche :</label>
             <select name="reseach_subject" id="researchSubject">
                 <option value="title">Titre</option>
                 <option value="director">Réalisateur</option>
