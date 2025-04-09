@@ -1,10 +1,9 @@
 :root { /* Stockage de Variable */
-    --background-color : #202C39;
-    --main-color : #283845;
-    --font-color : #B8B08D;
-    --secondary-color : #F2D492;
-    --third-color : #F29559; 
-    --third-text-color : #fc8130;
+    --background-color : #202C39; /* Couleur de fond du site */
+    --font-color : #B8B08D;       /* Couleur de fond de l'interface haute */
+    --secondary-color : #F2D492;  /* Couleur du titre "WatchList" */
+    --third-color : #F29559;      /* Couleur des animations, du h1 et de l'entourage des résultats */
+    --third-text-color : #fc8130; /* Couleur du texte (utilisé souvent brut) */
 }
 
 body {  /* Les paramétres universels de la/les page(s) */
@@ -16,9 +15,9 @@ body {  /* Les paramétres universels de la/les page(s) */
 }
 
 /*
-=========================
+==============================
      Barre de naviguation
-=========================
+==============================
 */
 
 header {
@@ -59,6 +58,8 @@ header {
 }
 
 .topbar ul li a {
+    color: black; /*Couleur du texte*/
+    text-decoration: none; /*Enlever le soulignage*/
     cursor: pointer; /*Mettre le curseur en pointeur pour montrer que c'est cliquable*/
     display: inline-block; /*Pour que le padding et les dimensions fonctionnent */
     padding: 10px 20px; /*Ecartement des items par rapport aux autres*/
@@ -69,35 +70,29 @@ header {
     box-shadow: 0 200px 100px -100px white inset; /*Ombre interne*/
     transition: box-shadow 0.25s, background-color 0.25s, color 0.25s; /*Transition pour l'ombre, fond et texte*/
 }
-.topbar ul li a{
-    color: black; /*Couleur du texte*/
-    text-decoration: none; /*Enlever le soulignage*/
-}
 
 .topbar ul li:hover {
     box-shadow: 0 200px 100px -100px var(--third-color) inset; /*Ombre interne avec une autre couleur*/
     background-color: var(--third-color); /*Fond coloré au survol*/
     color: white; /*Changer la couleur du texte*/
 }
-
 .topbar ul li:active {
     background-color: var(--third-text-color); /*Fond lors du clic*/
 }
 
 /*
-=========================
-     Page d'accueil
-=========================
+==========================
+     Elément général 
+==========================
 */
 
 h1 { /* Classe s'occupant des titres de pages */
-    background-color: var(--third-text-color);
+    background-color: var(--third-color);
 }
 
 .base_text{ /* Classe à mettre pour mettre un texte spécifique en orange */
     color: var(--third-text-color);
 }
-
 .searchForm{/* Le carré de recherche des pages de recherches */
     padding-top: 2%; /* Laisse de l'espace entre les boutons du dessus... */
     padding-bottom: 3%; /* ...et les résultats du dessous */
@@ -119,10 +114,10 @@ input { /*Barre de recherche*/
     border-style: solid;
     color:var(--third-text-color);
 }
-#release_date{/*Texte de résultats : la date de sortie*/
+#release_date{ /* Texte de résultats : la date de sortie */
     color:var(--third-text-color);
 }
-#overview{
+#overview{ /* Texte de résultats : la description du résultat */
     color:var(--third-text-color);
 }
 
@@ -141,7 +136,6 @@ input { /*Barre de recherche*/
     width: 150px; /*La longueur de l'affiche*/
     height: auto;
 }
-
 .poster { /*L'affiche d'un résultat dans details.html*/
     width: 300px; /*Affiche plus grande*/
     height: auto;
