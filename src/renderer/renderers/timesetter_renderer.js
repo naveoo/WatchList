@@ -7,7 +7,6 @@ document.getElementById('findMovies').addEventListener('click', async () => {
         return;
     }
 
-    // Rechercher les films compatibles
     const movies = await ipcRenderer.invoke('get-movies-by-duration', availableTime);
     const suggestionsContainer = document.getElementById('suggestionsContainer');
     suggestionsContainer.innerHTML = '';
@@ -17,7 +16,6 @@ document.getElementById('findMovies').addEventListener('click', async () => {
         return;
     }
 
-    // Afficher les suggestions de films
     movies.forEach(movie => {
         const movieElement = document.createElement('div');
         movieElement.classList.add('movie');
