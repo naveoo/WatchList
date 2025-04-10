@@ -42,7 +42,8 @@ header {
     padding: 0.5em 3em; /* Etend la boîte de 0.5em vers le haut/bas et de 3em vers la droite/gauche */
     border-radius: 3%; /* Lisse les bords pour faire un semblant d'effet */
     font-family: Verdana, Geneva, Tahoma, sans-serif; /* Définis la police */
-    font-size: large; /* Définis la taille d'écriture */
+    font-size: 1.5em; /* Définis la taille d'écriture */
+    font-weight: 700;
     font-style: oblique; /* Définis le style d'écriture => Oblique */
 }
 

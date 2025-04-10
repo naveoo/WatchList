@@ -39,7 +39,7 @@ app.whenReady().then(() => {
             responseHeaders: {
                 ...details.responseHeaders,
                 'Content-Security-Policy': [
-                    "default-src 'self'; img-src 'self' https://image.tmdb.org; script-src 'self' 'unsafe-inline';"
+                    "default-src 'self'; img-src 'self' https://image.tmdb.org; script-src 'self' 'nonce-protectedcode' 'unsafe-hashes'; style-src 'self' 'unsafe-inline';"
                 ]
             }
         });
@@ -178,5 +178,21 @@ ipcMain.handle('remove-from-watchlist', async (event, movieId) => {
                 resolve(true);
             }
         });
+    });
+});
+
+ipcMain.handle('get-movies-by-duration', (event, availableTime) => {
+    return new Promise((resolve, reject) => {
+        db.all(
+            "SELECT * FROM watchlist WHERE duration <= ? ORDER BY duration DESC",
+            [availableTime],
+            (err, rows) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(rows);
+                }
+            }
+        );
     });
 });
