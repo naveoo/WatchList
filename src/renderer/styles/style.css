@@ -112,7 +112,7 @@ input { /*Barre de recherche*/
     flex-wrap: wrap; /*Adapte l'affichage de la liste selon la taille de l'écran*/
     justify-content: center; /*Centre par défaut les élements sur la page*/
     border:ridge 2px var(--third-color);
-    border-style: solid;
+    border-style: solid; /* Met la bordure en solide */
     color:var(--third-text-color);
 }
 #release_date{ /* Texte de résultats : la date de sortie */
