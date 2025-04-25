@@ -135,9 +135,9 @@ input { /*Barre de recherche*/
 }
 .preview_poster { /*Les affiches des résultats de recherche*/
     width: 150px; /*La longueur de l'affiche*/
-    height: auto;
+    height: auto; /* Réglage auto de la taille */
 }
 .poster { /*L'affiche d'un résultat dans details.html*/
     width: 300px; /*Affiche plus grande*/
-    height: auto;
+    height: auto; /* Réglage auto de la taille */
 }
