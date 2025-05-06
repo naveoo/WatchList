@@ -42,11 +42,5 @@ document.getElementById('addFavoriteButton')?.addEventListener('click', async ()
 document.getElementById('watchlistButton')?.addEventListener('click', async () => {
     const movieId = localStorage.getItem('selectedMovieId');
     if (!movieId) return;
-
-    console.log('Ajout du film à la watchlist...');
-    try {
-        await ipcRenderer.invoke('add-to-watchlist', movieId);
-    } catch (error) {
-        console.error('Erreur lors de l\'ajout à la watchlist:', error);
-    }
+    await ipcRenderer.invoke('add-to-watchlist', movieId);
 });
