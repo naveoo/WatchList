@@ -34,17 +34,18 @@ header {
 }
 
 .logo-container img{
-    height: 30px; /*Taille du logo */
+    height: 100px; /*Taille du logo */
 }
 
 .titre{ /* Le titre du site dans la topbar */
-    background-color: var(--secondary-color); /* Met le background dans une teinture différent de la topbar */
-    padding: 0.5em 3em; /* Etend la boîte de 0.5em vers le haut/bas et de 3em vers la droite/gauche */
+    background-color: var(--third-color); /* Met le background dans une teinture différent de la topbar */
+    padding: 0.5em 2em; /* Etend la boîte de 0.5em vers le haut/bas et de 3em vers la droite/gauche */
     border-radius: 3%; /* Lisse les bords pour faire un semblant d'effet */
     font-family: Verdana, Geneva, Tahoma, sans-serif; /* Définis la police */
     font-size: 1.5em; /* Définis la taille d'écriture */
     font-weight: 700;
-    font-style: oblique; /* Définis le style d'écriture => Oblique */
+    font-style: oblique; /* Définis le style d'écriture => Oblique (à garder ?) */
+    margin: 1em 2em 1em 0em; /*Espace le titre pour éviter que tout soit collé*/
 }
 
 .topbar ul {
@@ -89,6 +90,7 @@ header {
 
 h1 { /* Classe s'occupant des titres de pages */
     background-color: var(--third-color);
+    margin-top: 3em;
 }
 
 .base_text{ /* Classe à mettre pour mettre un texte spécifique en orange */
