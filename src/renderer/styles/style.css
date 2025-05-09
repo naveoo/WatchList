@@ -16,7 +16,7 @@ body {  /* Les paramétres universels de la/les page(s) */
 
 /*
 ==============================
-     Barre de naviguation
+    Barre de naviguation
 ==============================
 */
 
@@ -34,7 +34,7 @@ header {
 }
 
 .logo-container img{
-    height: 100px; /*Taille du logo */
+    height: 70px; /*Taille du logo */
 }
 
 header h2 { /* Le titre du site dans la topbar */
@@ -50,6 +50,7 @@ header h2 { /* Le titre du site dans la topbar */
     display: flex; /*Alignement responsive des liens*/
     padding: 0;
     margin: 0;
+    margin-right: 20px;
     list-style: none; /*Enlève les points moches des li */
 }
 
@@ -76,7 +77,7 @@ header h2 { /* Le titre du site dans la topbar */
 
 /*
 ==========================
-     Elément général 
+     Eléments généraux
 ==========================
 */
 
