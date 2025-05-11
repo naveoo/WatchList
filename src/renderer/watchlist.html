@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css" type="text/css" />
     <title>WatchList</title>
+    <link rel="stylesheet" href="styles/style.css" type="text/css" />
 </head>
+
 <body>
     <!-- La topbar -->
     <header></header> 
@@ -15,19 +16,20 @@
         <h1>Ma Watchlist</h1>
         <div id="watchlist"></div>
         <a href="index.html"><button>Retour</button></a>
-
-        <!-- Le script JavaScript -->
-        <script nonce="protectedcode">
-            fetch("components/header.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementsByTagName("header")[0].innerHTML = data;
-            });
-            document.addEventListener('DOMContentLoaded', () => {
-                loadWatchlist();
-            });
-        </script>
-        <script src="./renderers/watchlist_renderer.js"></script>
     </div>
+
+    <!-- Le script JavaScript -->
+    <script nonce="protectedcode">
+        fetch("components/header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementsByTagName("header")[0].innerHTML = data;
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            loadWatchlist();
+        });
+    </script>
+    <script src="renderers/watchlist_renderer.js"></script>
+    
 </body>
 </html>
