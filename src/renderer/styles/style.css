@@ -79,7 +79,7 @@ h1 {
     padding: 15px;
     border-radius: 10px;
     width: 60%;
-    margin: 1em auto 0 auto;
+    margin: 1em auto 1em auto;
 }
 
 .searchForm {
@@ -119,6 +119,9 @@ input:hover {
 #release_date,
 #overview {
     color: var(--third-text-color);
+}
+#ja {
+    margin: 1em 10% 0 10%;
 }
 
 /* === Index === */
