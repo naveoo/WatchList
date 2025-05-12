@@ -1,119 +1,106 @@
-:root { /* Stockage de Variable */
-    --background-color : #202C39; /* Couleur de fond du site */
-    --font-color : #B8B08D;       /* Couleur de fond de l'interface haute */
-    --secondary-color : #F2D492;  /* Couleur du titre "WatchList" */
-    --third-color : #F29559;      /* Couleur des animations, du h1 et de l'entourage des résultats */
-    --third-text-color : #fc8130; /* Couleur du texte (utilisé souvent brut) */
+:root {
+    --background-color: #202C39;
+    --font-color: #B8B08D;
+    --secondary-color: #F2D492;
+    --third-color: #F29559;
+    --third-text-color: #fc8130;
 }
 
-body {  /* Les paramétres universels de la/les page(s) */
+body {
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);  /* Définit la couleurs de fond */
-    font-family: Arial, sans-serif;             /* Définit la police de texte */
-    text-align: center;                         /* Met le texte au centre */
+    background-color: var(--background-color);
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-/*
-==============================
-    Barre de naviguation
-==============================
-*/
-
+/* === Barre de navigation === */
 header {
-    z-index: +1;
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    display: flex;                          /*Alignement responsive du logo et des liens pour l'adapter à toute taille d'écran*/
-    justify-content: space-between;         /*Espace entre le logo et la navigation */
-    align-items: center;                    /*Les aligner au millieu de fenetre*/
-    padding: 1em;                           /*Espace minimum entre eux*/
-    background-color: var(--font-color);    /*Fond de la topbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: var(--font-color);
 }
 
-.logo-container img{
-    height: 70px; /*Taille du logo */
+.logo-container img {
+    height: 70px;
 }
 
-header h2 { /* Le titre du site dans la topbar */
-    border-radius: 3%;                                /* Lisse les bords pour faire un semblant d'effet */
-    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Définis la police */
-    font-size: 1.5em;                                 /* Définis la taille d'écriture */
+header h2 {
+    border-radius: 3%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
     font-weight: 700;
-    font-style: oblique; /* Définis le style d'écriture => Oblique (à garder ?) */
-    margin: 1em 2em 1em 0em; /*Espace le titre pour éviter que tout soit collé*/
+    font-style: oblique;
+    margin: 1em 2em 1em 0;
 }
 
 .topbar ul {
-    display: flex;                                    /* Alignement responsive des liens*/
+    display: flex;
     padding: 0;
-    margin: 0;
-    margin-right: 20px;
-    list-style: none;                                 /* Enlève les points moches des li */
+    margin: 0 20px 0 0;
+    list-style: none;
 }
 
 .topbar ul li {
-    margin-right: 20px;                    /* Espace entre chaque lien */
-    border: solid 3px var(--font-color);
-    transition: border-color 0.25s;        /* Transition pour l'ombre, fond et texte */
+    margin-right: 20px;
+    border: 3px solid var(--font-color);
+    transition: border-color 0.25s;
 }
 
 .topbar ul li a {
-    color: black;                        /* Couleur du texte */
-    text-decoration: none;                 /* Enlever le soulignage */
-    cursor: pointer;                       /* Mettre le curseur en pointeur pour montrer que c'est cliquable */
-    display: inline-block;                 /* Pour que le padding et les dimensions fonctionnent */
-    padding: 10px 20px;                    /* Ecartement des items par rapport aux autres */
-    background-color: transparent;         /* Couleur de fond de base */
-    font-size: 1em;                        /* Taille de police */
-    text-align: center;                    /* Mise du texte au centre */
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    font-size: 1em;
+    text-align: center;
 }
 
 .topbar ul li:hover {
-    border-color : var(--background-color);
+    border-color: var(--background-color);
 }
 
-/*
-==========================
-     Eléments généraux
-==========================
-*/
-
-h1 { /* Paramétre influant sur le titre des pages */
-    background-color: var(--third-color); /* Met le fond du h1 en orange clair */
-    color: var(--background-color);       /* Couleur du texte */
-    text-align: center;                   /* Aligne le texte au centre */
-    font-family: 'Arial', sans-serif;     /* Définit la police d'écriture */
-    font-size: 2.5rem;                    /* Taille de la police en 2.5rem */
-    padding: 15px;                        /* Ecart entre la bordure et le texte */
-    border-radius: 10px;                  /* Arrondi la bordure */
-    width: 60%;                           /* Taille de l'ensemble en fonction de la taille de l'écran */
-    margin-left: auto;                    /* Marge en auto pour centrer l'ensemble avec un espace 50px de haut et bas */
-    margin-right: auto;
-    margin-top: 1em;
+/* === Eléments généraux === */
+h1 {
+    background-color: var(--third-color);
+    color: var(--background-color);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 2.5rem;
+    padding: 15px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 1em auto 0 auto;
 }
 
-.searchForm{/* Le carré de recherche des pages de recherches */
-    padding-bottom: 3%;                   /* ...et les résultats du dessous */
+.searchForm {
+    padding-bottom: 3%;
 }
-.content{ /* Mise en page de la page de manière général */
-    margin-top: 2em;
-    margin-bottom: 1em;
+
+.content {
+    margin: 2em 0 1em 0;
     padding-top: 4em;
 }
-div div, section label, section h2{ /* Classe mettant en couleur les éléments directement sur le fond du site qui est bleu */
-    /* "div div" : Coloration simple des résultats. */
-    /* "section label" : Coloration des textes descriptifs des espaces de recherches */
-    /* "section h2" : Coloration des titres contenu dans les sections */
+
+div div,
+section label,
+section h2 {
     color: var(--third-text-color);
 }
 
-input { /*Barre de recherche*/
-    width: 80%;                           /*Je met la longueur de la barre de recherche (80% de la page afin que ca soit responsive)*/
-    padding: 10px;                        /*Je grossi la taille de la barre de recherche*/
-    margin-bottom: 20px;                  /*La marge du bottom*/
+input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
     transition: border-radius 0.3s;
 }
 
@@ -121,64 +108,47 @@ input:hover {
     border-radius: 50px;
 }
 
-.movie-list { /*Le conteneur des résultats de recherche*/
-    display: flex;                        /*Affichage des élements en liste*/
-    flex-wrap: wrap;                      /*Adapte l'affichage de la liste selon la taille de l'écran*/
-    justify-content: center;              /*Centre par défaut les élements sur la page*/
-    border:ridge 2px var(--third-color);
-    border-style: solid;                  /* Met la bordure en solide */
-    color:var(--third-text-color);
-}
-#release_date{ /* Texte de résultats : la date de sortie */
-    color:var(--third-text-color);
-}
-#overview{ /* Texte de résultats : la description du résultat */
-    color:var(--third-text-color);
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid var(--third-color);
+    color: var(--third-text-color);
 }
 
-/*
-=========================
-     Index
-=========================
-*/
+#release_date,
+#overview {
+    color: var(--third-text-color);
+}
 
+/* === Index === */
 .result {
     margin-top: 1em;
 }
 
-/*
-=========================
-     Details
-=========================
-*/
-
-.movie { /*Les résultats de recherche*/
-    padding: 0.2em;                     /* L'espace entre tous les résultats */
-    text-align: center;                 /* Centrer le nom du film sous l'image */
-    cursor: pointer;                    /* Montre un curseur en mode pointer */
-}
-.preview_poster { /*Les affiches des résultats de recherche*/
-    width: 150px;                       /* La longueur de l'affiche */
-    height: auto;                       /* Réglage auto de la taille */
-}
-.poster { /*L'affiche d'un résultat dans details.html*/
-    width: 300px;                       /* Affiche plus grande */
-    height: auto;                       /* Réglage auto de la taille */
+/* === Détails === */
+.movie {
+    padding: 0.2em;
+    text-align: center;
+    cursor: pointer;
 }
 
-#addFavoriteButton:active {
-    background-color: #439744;
+.preview_poster {
+    width: 150px;
+    height: auto;
 }
+
+.poster {
+    width: 300px;
+    height: auto;
+}
+
+#addFavoriteButton:active,
 #watchlistButton:active {
     background-color: #439744;
 }
 
-/*
-=========================
-     Timesetter
-=========================
-*/
-
+/* === Timesetter === */
 .timeSetterForm input {
     margin-top: 1em;
 }
