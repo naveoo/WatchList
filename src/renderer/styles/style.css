@@ -124,7 +124,7 @@ input:hover {
     padding: 1em;
     color: var(--third-text-color);
 }
-.movie-item{
+.movie-item {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: var(--movie-item-color);
     border-style: solid;
@@ -161,7 +161,7 @@ input:hover {
 }
 
 #date {
-    font-size:larger;
+    font-size:x-large;
 }
 
 #addFavoriteButton:active,
