@@ -8,9 +8,11 @@ async function loadFavorites() {
         const movieElement = document.createElement('div');
         movieElement.classList.add('movie');
         movieElement.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.title}" width="100">
-            <p>${movie.title}</p>
-            <button class="delete-btn" data-id="${movie.movie_id}">Supprimer</button>
+            <div class="movie-item">
+                <img src="${movie.poster}" alt="${movie.title}" width="100">
+                <p>${movie.title}</p>
+                <button class="delete-btn" data-id="${movie.movie_id}">Supprimer</button>
+            </div>
         `;
         
         const deleteButton = movieElement.querySelector('.delete-btn');

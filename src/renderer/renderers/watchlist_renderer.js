@@ -11,11 +11,13 @@ async function loadWatchlist() {
             const movieElement = document.createElement('div');
             movieElement.classList.add('movie');
             movieElement.innerHTML = `
-                <img src="${movie.poster}" alt="${movie.title}" width="100">
-                <p><strong>${movie.title}</strong></p>
-                <p>Durée : ${movie.duration ? movie.duration + ' min' : 'Inconnue'}</p>
-                <p>Sortie : ${movie.release_date}</p>
-                <button class="delete-watchlist-btn" data-id="${movie.movie_id}">Supprimer</button>
+                <div class="movie-item">
+                    <img src="${movie.poster}" alt="${movie.title}" width="100">
+                    <p><strong>${movie.title}</strong></p>
+                    <p>Durée : ${movie.duration ? movie.duration + ' min' : 'Inconnue'}</p>
+                    <p>Sortie : ${movie.release_date}</p>
+                    <button class="delete-watchlist-btn" data-id="${movie.movie_id}">Supprimer</button>
+                </div>
             `;
 
             const deleteButton = movieElement.querySelector('.delete-watchlist-btn');

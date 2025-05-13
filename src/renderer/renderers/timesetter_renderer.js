@@ -20,9 +20,11 @@ document.getElementById('findMovies').addEventListener('click', async () => {
         const movieElement = document.createElement('div');
         movieElement.classList.add('movie');
         movieElement.innerHTML = `
-            <img src="${movie.poster}" alt="${movie.title}" width="100">
-            <p><strong>${movie.title}</strong> (${movie.release_date})</p>
-            <p>Durée : ${movie.duration} minutes</p>
+            <div class="movie-item">
+                <img src="${movie.poster}" alt="${movie.title}" width="100">
+                <p><strong>${movie.title}</strong> <i>(${movie.release_date})</i></p>
+                <p>Durée : ${movie.duration} minutes</p>
+            </div>
         `;
         suggestionsContainer.appendChild(movieElement);
     });

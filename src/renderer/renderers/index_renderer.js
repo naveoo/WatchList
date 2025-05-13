@@ -29,9 +29,11 @@ function displayMovies(movies) {
         movieElement.classList.add('movie');
         movieElement.dataset.id = movie.id;
         movieElement.innerHTML = `
-            <img src="${movie.poster || '../../assets/placeholder-not-found.png'}" 
-                 alt="${movie.title}">
-            <p>${movie.title}</p>
+            <div class="movie-item">
+                <img src="${movie.poster || '../../assets/placeholder-not-found.png'}" 
+                    alt="${movie.title}">
+                <p>${movie.title}</p>
+            </div>
         `;
 
         movieElement.addEventListener('click', () => {

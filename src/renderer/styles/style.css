@@ -4,6 +4,7 @@
     --secondary-color: #F2D492;
     --third-color: #F29559;
     --third-text-color: #fc8130;
+    --movie-item-color: #011b36;
 }
 
 body {
@@ -14,7 +15,10 @@ body {
     text-align: center;
 }
 
+/* =========================== */
 /* === Barre de navigation === */
+/* =========================== */
+
 header {
     z-index: 1;
     position: absolute;
@@ -29,6 +33,7 @@ header {
 }
 
 .logo-container img {
+    margin-left: 2em;
     height: 70px;
 }
 
@@ -51,6 +56,7 @@ header h2 {
 .topbar ul li {
     margin-right: 20px;
     border: 3px solid var(--font-color);
+    background-color:#b8b396;
     transition: border-color 0.25s;
 }
 
@@ -69,12 +75,14 @@ header h2 {
     border-color: var(--background-color);
 }
 
+/* ========================= */
 /* === Eléments généraux === */
+/* ========================= */
+
 h1 {
     background-color: var(--third-color);
     color: var(--background-color);
     text-align: center;
-    font-family: Arial, sans-serif;
     font-size: 2.5rem;
     padding: 15px;
     border-radius: 10px;
@@ -88,7 +96,7 @@ h1 {
 
 .content {
     margin: 2em 0 1em 0;
-    padding-top: 4em;
+    padding-top: 5em;
 }
 
 div div,
@@ -112,24 +120,26 @@ input:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 2px solid var(--third-color);
+    border-top: 2px solid var(--font-color);
+    padding: 1em;
     color: var(--third-text-color);
+}
+.movie-item{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--movie-item-color);
+    border-style: solid;
+    padding: 25px;
 }
 
 #release_date,
 #overview {
     color: var(--third-text-color);
 }
-#ja {
-    margin: 1em 10% 0 10%;
-}
 
-/* === Index === */
-.result {
-    margin-top: 1em;
-}
-
+/* =============== */
 /* === Détails === */
+/* =============== */
+
 .movie {
     padding: 0.2em;
     text-align: center;
@@ -146,12 +156,23 @@ input:hover {
     height: auto;
 }
 
+#summary {
+    margin: 1em 10% 0.5em 10%;
+}
+
+#date {
+    font-size:larger;
+}
+
 #addFavoriteButton:active,
 #watchlistButton:active {
     background-color: #439744;
 }
 
+/* ================== */
 /* === Timesetter === */
+/* ================== */
+
 .timeSetterForm input {
     margin-top: 1em;
 }
