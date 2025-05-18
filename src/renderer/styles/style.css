@@ -5,7 +5,7 @@
     --third-color: #F29559;
     --third-text-color: #fc8130;
     --movie-item-color: #011b36;
-    --button-color: antiquewhite;
+    --button-color: #f8edd0;
 }
 
 body {
@@ -146,7 +146,7 @@ a button {
     color: var(--third-text-color);
 }
 .movie-item {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: var(--movie-item-color);
     border-style: solid;
     border-radius: 10px;
@@ -160,7 +160,7 @@ a button {
 .detail {
     margin-left: 10%;
     margin-right: 10%;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: var(--movie-item-color);
     border-style: solid;
     border-radius: 10px;
@@ -189,7 +189,7 @@ a button {
 
 #date {
     margin-top: 10px;
-    font-size:x-large;
+    font-size: x-large;
 }
 
 .detail img {
