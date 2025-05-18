@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WatchList - Détail du film</title>
+    <title>WatchList - Détail du film choisi</title>
     <link rel="Stylesheet" href="styles/style.css" type="text/css" />
 </head>
 
@@ -13,12 +13,17 @@
 
     <!-- Le Contenu de la Page -->
     <div class="content">
-        <h1 id="title"></h1>
-        <img id="poster" src="" alt="" class="poster">
-        <div id="date"><strong>Sortie :</strong> <span id="release_date"></span></div>
-        <div id="summary"><strong>Résumé :</strong> <span id="overview"></span></div>
-        <button id="addFavoriteButton">Ajouter aux favoris</button>
-        <button id="watchlistButton">À regarder plus tard</button><br/>
+        <div class="detail">
+            <h1 id="title"></h1>
+            <img id="poster" src="" alt="" class="poster">
+            <div id="date"><strong>Sortie :</strong> <span id="release_date"></span></div>
+            <div id="summary">
+                <strong>Résumé</strong><br/>
+                <span id="overview"></span>
+            </div>
+            <button id="addFavoriteButton">Ajouter aux favoris</button>
+            <button id="watchlistButton">À regarder plus tard</button><br/>
+        </div>
         <a href="index.html"><button>Autre recherche</button></a>
     </div>
 
