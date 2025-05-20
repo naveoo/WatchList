@@ -1,44 +1,66 @@
 require('dotenv').config();
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+const fs = require('fs');
 const axios = require('axios');
 const sqlite3 = require('sqlite3').verbose();
 
 const API_KEY = process.env.API_KEY;
 const BASE_URL = 'https://api.themoviedb.org/3';
 
-const dbPath = path.join(__dirname, '../data.db');
-const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-        console.error('Erreur lors de la connexion à la base de données', err);
-    } else {
-        console.log('Connecté à la base de données SQLite.');
-        db.run(`
-            CREATE TABLE IF NOT EXISTS favorites (
-                id INTEGER PRIMARY KEY,
-                movie_id INTEGER UNIQUE,
-                title TEXT,
-                poster TEXT,
-                release_date TEXT
-            )
-        `, (err) => {
-            if (err) console.error("Erreur lors de la création de la table favorites:", err);
-        });
+const isDev = !app.isPackaged;
 
-        db.run(`
-            CREATE TABLE IF NOT EXISTS watchlist (
-                id INTEGER PRIMARY KEY,
-                movie_id INTEGER UNIQUE,
-                title TEXT,
-                poster TEXT,
-                release_date TEXT,
-                duration INTEGER
-            )
-        `, (err) => {
-            if (err) console.error("Erreur lors de la création de la table watchlist:", err);
-        });
-    }
+const userDataPath = app.getPath('userData');
+const dbFileName = 'data.db';
+const targetDbPath = path.join(userDataPath, dbFileName);
+
+const sourceDbPath = isDev
+  ? path.join(__dirname, '../data/data.db')
+  : path.join(process.resourcesPath, 'data', dbFileName);
+
+if (!fs.existsSync(targetDbPath)) {
+  fs.mkdirSync(userDataPath, { recursive: true });
+  fs.copyFileSync(sourceDbPath, targetDbPath);
+  console.log('Base de données copiée dans userData.');
+} else {
+  console.log('Base de données déjà présente dans userData.');
+}
+
+const db = new sqlite3.Database(targetDbPath, (err) => {
+  if (err) {
+    console.error('Erreur lors de la connexion à la base de données', err);
+  } else {
+    console.log('Connecté à la base de données SQLite.');
+
+    db.run(`
+      CREATE TABLE IF NOT EXISTS favorites (
+        id INTEGER PRIMARY KEY,
+        movie_id INTEGER UNIQUE,
+        title TEXT,
+        poster TEXT,
+        release_date TEXT
+      )
+    `, (err) => {
+      if (err) console.error("Erreur lors de la création de la table favorites:", err);
+    });
+
+    db.run(`
+      CREATE TABLE IF NOT EXISTS watchlist (
+        id INTEGER PRIMARY KEY,
+        movie_id INTEGER UNIQUE,
+        title TEXT,
+        poster TEXT,
+        release_date TEXT,
+        duration INTEGER
+      )
+    `, (err) => {
+      if (err) console.error("Erreur lors de la création de la table watchlist:", err);
+    });
+  }
 });
+
+app.setPath('userData', path.join(__dirname, '../cache'));
+
 
 app.commandLine.appendSwitch('disable-gpu');
 app.setPath('userData', path.join(__dirname, '../cache'));

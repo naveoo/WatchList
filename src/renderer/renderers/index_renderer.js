@@ -30,7 +30,7 @@ function displayMovies(movies) {
         movieElement.dataset.id = movie.id;
         movieElement.innerHTML = `
             <div class="movie-item">
-                <img src="${movie.poster || '../../assets/placeholder-not-found.png'}" 
+                <img src="${movie.poster || 'assets/placeholder-not-found.png'}" 
                     alt="${movie.title}">
                 <p>${movie.title}</p>
             </div>
