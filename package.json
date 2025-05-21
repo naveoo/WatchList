@@ -19,7 +19,7 @@
     "sqlite3": "^5.1.7"
   },
   "build": {
-    "appId": "com.example.watchlist",
+    "appId": "watchlist",
     "productName": "Watchlist",
     "asar": true,
     "files": [
@@ -32,6 +32,10 @@
         "from": "data/",
         "to": "data/",
         "filter": ["**/*.db"]
+      },
+      {
+        "from": ".env",
+        "to": ".env"
       }
     ],
     "win": {

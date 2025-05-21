@@ -1,14 +1,34 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
 const sqlite3 = require('sqlite3').verbose();
 
-const API_KEY = process.env.API_KEY;
-const BASE_URL = 'https://api.themoviedb.org/3';
-
 const isDev = !app.isPackaged;
+
+let envPath;
+
+if (isDev) {
+  // En développement → fichier à la racine du projet
+  envPath = path.join(__dirname, '..', '..', '.env');
+} else {
+  // En production (.exe) → dans le dossier resources/
+  envPath = path.join(process.resourcesPath, '.env');
+}
+
+console.log('Chargement .env depuis :', envPath);
+
+if (fs.existsSync(envPath)) {
+  dotenv.config({ path: envPath });
+  console.log('✅ API_KEY chargée :', process.env.API_KEY);
+} else {
+  console.warn('❌ Fichier .env non trouvé à :', envPath);
+}
+
+const API_KEY = process.env.API_KEY;
+
+const BASE_URL = 'https://api.themoviedb.org/3';
 
 const userDataPath = app.getPath('userData');
 const dbFileName = 'data.db';
