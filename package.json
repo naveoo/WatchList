@@ -7,7 +7,9 @@
   "license": "ISC",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder"
+    "build": "electron-builder",
+    "clean:dist": "del /Q dist\\*.blockmap dist\\*.yaml && rmdir /S /Q dist\\win-unpacked",
+    "build:clean": "npm run build && npm run clean:dist"
   },
   "devDependencies": {
     "electron": "^35.0.1",
@@ -41,6 +43,13 @@
     "win": {
       "target": "nsis",
       "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false,
+      "deleteAppDataOnUninstall": true,
+      "publish": null
     }
   }
 }
