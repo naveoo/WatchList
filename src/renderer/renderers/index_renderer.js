@@ -1,43 +1,52 @@
-const { ipcRenderer } = require('electron');
+    const { ipcRenderer } = require('electron');
 
-document.getElementById('searchInput').addEventListener('input', async () => {
-    triggerSearch();
-});
+    const searchInput = document.getElementById('searchInput');
+    const researchSubject = document.getElementById('researchSubject');
+    const searchResultsContainer = document.getElementById('movieList');
 
-document.getElementById('researchSubject').addEventListener('change', async () => {
-    triggerSearch();
-});
+    searchInput.addEventListener('input', triggerSearch);
+    researchSubject.addEventListener('change', triggerSearch);
 
-async function triggerSearch() {
-    const query = document.getElementById('searchInput').value.trim();
-    const searchSubject = document.getElementById('researchSubject').value;
-    if (query.length < 3) return;
+    async function triggerSearch() {
+        const query = searchInput.value.trim();
+        const subject = researchSubject.value;
+        if (query.length < 3) return;
 
-    const movies = await ipcRenderer.invoke('search-movies', { query, searchSubject });
-    displayMovies(movies);
-}
+        const movies = await ipcRenderer.invoke('search-movies', {
+            query,
+            searchSubject: subject
+        });
 
-const searchResultsContainer = document.getElementById('movieList');
+        displayMovies(movies);
+    }
+
+    const path = require('path');
 
 function displayMovies(movies) {
     searchResultsContainer.innerHTML = '';
 
     movies.forEach(movie => {
-        console.log(`Film: ${movie.title} | Poster: ${movie.poster}`);
+        let posterSrc;
+
+        if (movie.poster && movie.poster.startsWith('http')) {
+            posterSrc = movie.poster;
+        } else {
+            posterSrc = path.join(__dirname, '../renderer/assets/placeholder-not-found.png');
+            posterSrc = posterSrc.replace(/\\/g, '/');
+            posterSrc = `file://${posterSrc}`;
+        }
 
         const movieElement = document.createElement('div');
         movieElement.classList.add('movie');
         movieElement.dataset.id = movie.id;
         movieElement.innerHTML = `
             <div class="movie-item">
-                <img src="${movie.poster || 'assets/placeholder-not-found.png'}" 
-                    alt="${movie.title}">
+                <img src="${posterSrc}" alt="${movie.title}">
                 <p>${movie.title}</p>
             </div>
         `;
 
         movieElement.addEventListener('click', () => {
-            console.log('Film sélectionné :', movie.id);
             localStorage.setItem('selectedMovieId', movie.id);
             window.location.href = 'details.html';
         });

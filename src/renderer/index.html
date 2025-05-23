@@ -33,7 +33,6 @@
             <h2 id="title"></h2>
             <img id="poster" src="" alt="" class="poster">
         </section>
-        
     </div>
 
     <script nonce="protectedcode">
@@ -41,9 +40,8 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementsByTagName("header")[0].innerHTML = data;
-        });
+            });
     </script>
     <script src="renderers/index_renderer.js"></script>
-
 </body>
 </html>

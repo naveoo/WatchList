@@ -10,10 +10,8 @@ const isDev = !app.isPackaged;
 let envPath;
 
 if (isDev) {
-  // En développement → fichier à la racine du projet
   envPath = path.join(__dirname, '..', '..', '.env');
 } else {
-  // En production (.exe) → dans le dossier resources/
   envPath = path.join(process.resourcesPath, '.env');
 }
 
@@ -21,9 +19,6 @@ console.log('Chargement .env depuis :', envPath);
 
 if (fs.existsSync(envPath)) {
   dotenv.config({ path: envPath });
-  console.log('✅ API_KEY chargée :', process.env.API_KEY);
-} else {
-  console.warn('❌ Fichier .env non trouvé à :', envPath);
 }
 
 const API_KEY = process.env.API_KEY;
