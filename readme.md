@@ -32,45 +32,44 @@ Le projet a été entièrement créé et maintenu en collaboration sur [GitHub](
 
 ## 🗂️ Structure du projet
 
-src/
-    main/
-        main.js ← Point d'entrée Electron
-    renderer/
-        assets/
-            logo.png
-            placeholder_not_found.png
-        components/
-            header.html ← Barre de navigation injectée dynamiquement dans les pages
-        renderers/
-            index_renderer.js
-            details_renderer.js
-            favorites_renderer.js
-            watchlist_renderer.js
-            timesetter_renderer.js
-        styles/
-            style.css
-        index.html
-        details.html
-        favorites.html
-        watchlist.html
-        timesetter.html
-    data.db ← Base de données de test utilisée en mode développement
+- `src/`
+  - `main/`
+    - `main.js` : Point d'entrée Electron
+  - `renderer/`
+    - `assets/`
+      - `logo.png`
+      - `placeholder_not_found.png`
+    - `components/`
+      - `header.html` : Barre de navigation injectée dynamiquement dans les pages
+    - `renderers/`
+      - `index_renderer.js`
+      - `details_renderer.js`
+      - `favorites_renderer.js`
+      - `watchlist_renderer.js`
+      - `timesetter_renderer.js`
+    - `styles/`
+      - `style.css`
+    - `index.html`
+    - `details.html`
+    - `favorites.html`
+    - `watchlist.html`
+    - `timesetter.html`
+  - `data.db` : Base de données de test utilisée en mode développement
 
-data/
-    data.db ← Base de données utilisée lors de la compilation
+- `data/`
+  - `data.db` : Base de données utilisée lors de la compilation
 
-dist/
-    builder-debug.yml ← Fichier de débogage généré par défaut lors du build Electron
-    Watchlist Setup 1.3.1.exe ← Fichier exécutable Windows généré après build
+- `dist/`
+  - `builder-debug.yml` : Fichier de débogage généré par défaut lors du build Electron
+  - `Watchlist Setup 1.3.1.exe` : Fichier exécutable Windows généré après build
 
-node_modules/
-    ... ← Modules nécessaires au fonctionnement de l'application
+- `node_modules/`
+  - `...` : Modules nécessaires au fonctionnement de l'application
 
-.env ← Variables d’environnement, incluant la clé API TMDB
-icon.ico ← Icône de l'application utilisée pour la compilation
-package-lock.json ← Verrouillage des dépendances installées
-package.json ← Fichier de configuration principal de l’application
-
+- `.env` : Variables d’environnement, incluant la clé API TMDB  
+- `icon.ico` : Icône de l'application utilisée pour la compilation  
+- `package-lock.json` : Verrouillage des dépendances installées  
+- `package.json` : Fichier de configuration principal de l’application
 
 ---
 
